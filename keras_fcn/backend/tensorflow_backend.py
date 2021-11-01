@@ -5,5 +5,5 @@ import keras.backend as K
 
 def resize_images(x, size, method='bilinear'):
     new_size = tf.convert_to_tensor(size, dtype=tf.int32)
-    resized = tf.image.resize_images(x, new_size)
+    resized = tf.image.resize(x, new_size)
     return resized
