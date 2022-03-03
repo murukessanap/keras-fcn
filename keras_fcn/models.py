@@ -61,8 +61,8 @@ def FCN_VGG16(input_shape, classes, weight_decay=0.,
     outputs = VGGUpsampler(feat_pyramid, scales=[1, 1e-2, 1e-4], classes=classes, weight_decay=weight_decay)
 
     # Activation TODO{jihong} work only for channels_last
-    #scores = Activation('softmax')(outputs)
-    scores = Activation('sigmoid')(outputs)
+    scores = Activation('softmax')(outputs)
+    #scores = Activation('sigmoid')(outputs)
 
     # return model
     return Model(inputs=inputs, outputs=scores)
